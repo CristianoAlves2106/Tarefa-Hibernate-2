@@ -19,7 +19,7 @@ public class GerenciadorEventos {
 
     public static void salvarEvento(String evento, String data) {
         try {
-            SessionFactory sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+            SessionFactory sf = new Configuration().configure("hibernate.conexao.hibernate.cfg.xml").buildSessionFactory();
             Session s = sf.openSession();
             Transaction tx = s.beginTransaction();
             Eventos e = new Eventos();

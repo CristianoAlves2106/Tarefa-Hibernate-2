@@ -14,7 +14,7 @@
     <body>
         <table border="0">
             <tr><td>
-                    <form action="GravarEvento" >
+                    <form action="GravarEvento" method="get" >
                         Evento :<br><input type="text" name="evento" value=""/><br>
                         Data :<br><input type="text" name="dataEvento" value=""/><br>
                         <br><input type="submit" name="incluir" value="Salvar"/>

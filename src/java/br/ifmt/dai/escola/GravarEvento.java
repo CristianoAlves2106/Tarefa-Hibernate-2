@@ -31,26 +31,7 @@ public class GravarEvento extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-       String evento =request.getParameter("evento");
-        String dataEvento =request.getParameter("dataEvento");
-        response.setContentType("text/html;charset=IS0=8859-1");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title> Gravando Eventos no Hibernate</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h2>Gravando Eventos no Hibernate </h2>");
-            out.println("evento: "+evento+"<br>");
-            out.println("Data: "+dataEvento+"<br>");
-            GerenciadorEventos c=new GerenciadorEventos();
-            c.salvarEvento(evento, dataEvento);
-            out.println("</body>");
-            out.println("</html>");
-        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,7 +46,26 @@ public class GravarEvento extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       
+        String evento = request.getParameter("evento");
+        String dataEvento = request.getParameter("dataEvento");
+       
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title> Gravando Eventos no Hibernate</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h2>Gravando Eventos no Hibernate </h2>");
+            out.println("evento: " + evento + "<br>");
+            out.println("Data: " + dataEvento + "<br>");
+            GerenciadorEventos c = new GerenciadorEventos();
+            c.salvarEvento(evento, dataEvento);
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     /**
