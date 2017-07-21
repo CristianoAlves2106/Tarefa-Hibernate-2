@@ -19,7 +19,7 @@ public class GerenciadorEventos {
 
     public static void salvarEvento(String evento, String data) {
         try {
-            SessionFactory sf = new Configuration().configure("hibernate.conexao.hibernate.cfg.xml").buildSessionFactory();
+            SessionFactory sf = new Configuration().configure("hibernate/conexao/hibernate.cfg.xml").buildSessionFactory();
             Session s = sf.openSession();
             Transaction tx = s.beginTransaction();
             Eventos e = new Eventos();
@@ -38,7 +38,7 @@ public class GerenciadorEventos {
     }
 
     public List listarEventos() {
-        SessionFactory sf = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        SessionFactory sf = new Configuration().configure("hibernate/conexao/hibernate.cfg.xml").buildSessionFactory();
         Session s = sf.getCurrentSession();
         s.beginTransaction();
         List lista = s.createQuery("from Eventos").list();
@@ -47,4 +47,13 @@ public class GerenciadorEventos {
         return lista;
     }
 
+    public void adicionarPesssoasEventos(int idPessoa, int idEvento) {
+        SessionFactory sf = new Configuration().configure("hibernate/conexao/hibernate.cfg.xml").buildSessionFactory();
+        Session s = sf.openSession();
+        s.beginTransaction();
+        Pessoas p = (Pessoas) s.load(Pessoas.class, idPessoa);
+        Eventos e = (Eventos) s.load(Eventos.class, idEvento);
+        p.getEvennts().add(e);
+        s.getTransaction().commit();
+    }
 }

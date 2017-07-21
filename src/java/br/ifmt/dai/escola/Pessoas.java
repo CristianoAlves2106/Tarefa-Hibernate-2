@@ -5,11 +5,15 @@
  */
 package br.ifmt.dai.escola;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author 02376421152
  */
 public class Pessoas {
+
     private int idPessoa;
     private int idade;
     private String primeiroNome;
@@ -49,7 +53,15 @@ public class Pessoas {
     public void setUltimoNome(String ultimoNome) {
         this.ultimoNome = ultimoNome;
     }
-    
-    
-    
+
+    private Set evennts = new HashSet();
+
+    public Set getEvennts() {
+        return evennts;
+    }
+
+    public void setEvennts(Set evennts) {
+        this.evennts = evennts;
+    }
+
 }

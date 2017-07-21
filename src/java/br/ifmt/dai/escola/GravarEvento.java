@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "GravarEvento", urlPatterns = {"/GravarEvento"})
 public class GravarEvento extends HttpServlet {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -46,7 +45,7 @@ public class GravarEvento extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        System.out.println("começando servlet");
         String evento = request.getParameter("evento");
         String dataEvento = request.getParameter("dataEvento");
        

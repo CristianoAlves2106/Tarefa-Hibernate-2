@@ -13,7 +13,11 @@
         <property name="idade" column="idade"/>
         <property name="primeiroNome" column="primeiroNome"/>
         <property name="ultimoNome" column="ultimoNome"/>
-    </class>
+        <set name="events" table="pessoaseventos">
+            <key column="idPessoa"/>
+            <many-to-many column="idEvento" class="br.ifmt.dai.escola.Eventos"/>
+        </set>
+   </class>
 
 
 
