@@ -63,5 +63,23 @@ public class Pessoas {
     public void setEvennts(Set evennts) {
         this.evennts = evennts;
     }
+    private Set email = new HashSet();
+
+    public Set getEmail() {
+        return email;
+    }
+
+    public void setEmail(Set email) {
+        this.email = email;
+    }
+    private Set participantes = new HashSet();
+
+    public Set getParticipantes() {
+        return participantes;
+    }
+
+    public void setParticipantes(Set participantes) {
+        this.participantes = participantes;
+    }
 
 }

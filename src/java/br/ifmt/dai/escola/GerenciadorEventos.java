@@ -47,13 +47,22 @@ public class GerenciadorEventos {
         return lista;
     }
 
-    public void adicionarPesssoasEventos(int idPessoa, int idEvento) {
+    public  static void adicionarPesssoasEventos(int idPessoa, int idEvento) {
         SessionFactory sf = new Configuration().configure("hibernate/conexao/hibernate.cfg.xml").buildSessionFactory();
         Session s = sf.openSession();
         s.beginTransaction();
         Pessoas p = (Pessoas) s.load(Pessoas.class, idPessoa);
         Eventos e = (Eventos) s.load(Eventos.class, idEvento);
         p.getEvennts().add(e);
+        s.getTransaction().commit();
+    }
+
+    public static void adicionarPesssoasEmail(int idPessoa, String email) {
+        SessionFactory sf = new Configuration().configure("hibernate/conexao/hibernate.cfg.xml").buildSessionFactory();
+        Session s = sf.openSession();
+        s.beginTransaction();
+        Pessoas p = (Pessoas) s.load(Pessoas.class, idPessoa);
+        p.getEmail().add(email);
         s.getTransaction().commit();
     }
 }

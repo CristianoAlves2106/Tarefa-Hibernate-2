@@ -4,6 +4,7 @@
     Author     : 02376421152
 --%>
 
+<%@page import="br.ifmt.dai.escola.GerenciadorEventos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,9 @@
                 </td></tr>
 
         </table>
-
+        <%
+            GerenciadorEventos ge = new GerenciadorEventos();
+           ge.adicionarPesssoasEmail(1, "ruth@learning.com.br");
+        %>
     </body>
 </html>

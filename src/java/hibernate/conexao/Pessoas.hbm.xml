@@ -17,6 +17,11 @@
             <key column="idPessoa"/>
             <many-to-many column="idEvento" class="br.ifmt.dai.escola.Eventos"/>
         </set>
+        <set name="email" table="pessoasemails">
+            <key column="idPessoa"/>
+            <element type="string" column="email"/>
+        </set>
+        
    </class>
 
 
