@@ -23,9 +23,6 @@
                 </td></tr>
 
         </table>
-        <%
-            GerenciadorEventos ge = new GerenciadorEventos();
-           ge.adicionarPesssoasEmail(1, "ruth@learning.com.br");
-        %>
+       
     </body>
 </html>

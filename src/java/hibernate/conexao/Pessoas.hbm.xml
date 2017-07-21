@@ -6,7 +6,7 @@
   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-   <class name="br.ifmt.dai.escola.Pessoas" table="pessoas">
+    <class name="br.ifmt.dai.escola.Pessoas" table="pessoas">
         <id name="idPessoa" column="idPessoa" type="int">
             <generator class="native"/>
         </id>
@@ -20,10 +20,10 @@
         <set name="email" table="pessoasemails">
             <key column="idPessoa"/>
             <element type="string" column="email"/>
-        </set>
+        </set>   
         
-   </class>
-
+    </class>
+   
 
 
 </hibernate-mapping>

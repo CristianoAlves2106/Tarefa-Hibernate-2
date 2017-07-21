@@ -11,11 +11,11 @@
         </id>
         <property name="evento" column="evento" type="string"/>
         <property name="dataEvento" column="data" type="string"/>
-       
+        <set name="participantes" table="pessoaseventos" inverse="true">
+            <key column="idEvento"/>
+            <many-to-many column="idPessoa" class="br.ifmt.dai.escola.Pessoas"/>
+        </set>
     </class>
-    <set name="participantes" table="pessoaseventos" inverse="true">
-        <key column="idEvento"/>
-        <many-to-many column="idPessoa" class="br.ifmt.dai.escola.Pessoas"/>
-    </set>
+   
 
 </hibernate-mapping>

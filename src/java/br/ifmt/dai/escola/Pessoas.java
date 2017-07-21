@@ -72,7 +72,7 @@ public class Pessoas {
     public void setEmail(Set email) {
         this.email = email;
     }
-    private Set participantes = new HashSet();
+    public Set participantes = new HashSet();
 
     protected Set getParticipantes() {
         return participantes;
@@ -81,10 +81,9 @@ public class Pessoas {
     public void setParticipantes(Set participantes) {
         this.participantes = participantes;
     }
-    public void adicionarParaEventos(Eventos event){
+
+    public void adicionarParaEventos(Eventos event) {
         this.getEvennts().add(event);
-        
-        
-        
+
     }
 }
