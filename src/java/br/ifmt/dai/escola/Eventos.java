@@ -5,11 +5,15 @@
  */
 package br.ifmt.dai.escola;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author 02376421152
  */
 public class Eventos {
+
     private int idEventos;
     private String evento;
     private String dataEvento;
@@ -40,6 +44,15 @@ public class Eventos {
     public void setDataEvento(String dataEvento) {
         this.dataEvento = dataEvento;
     }
-    
-    
+
+    public Set events = new HashSet();
+
+    public Set getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set events) {
+        this.events = events;
+    }
+
 }

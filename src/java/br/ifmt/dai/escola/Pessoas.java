@@ -60,7 +60,7 @@ public class Pessoas {
         return evennts;
     }
 
-    public void setEvennts(Set evennts) {
+    protected void setEvennts(Set evennts) {
         this.evennts = evennts;
     }
     private Set email = new HashSet();
@@ -74,12 +74,17 @@ public class Pessoas {
     }
     private Set participantes = new HashSet();
 
-    public Set getParticipantes() {
+    protected Set getParticipantes() {
         return participantes;
     }
 
     public void setParticipantes(Set participantes) {
         this.participantes = participantes;
     }
-
+    public void adicionarParaEventos(Eventos event){
+        this.getEvennts().add(event);
+        
+        
+        
+    }
 }
